@@ -20,27 +20,27 @@ var Row = React.createClass({
 });
 
 var Table = React.createClass({
-  //getInitialState: function(){
-  //  return { data: [] };
-  //},
+  getInitialState: function(){
+    return { data: [] };
+  },
 
-  //componentDidMount: function() {
-  //  $.ajax({
-  //    url: this.props.url,
-  //    dataType: 'json',
-  //    cache: false,
-  //    success: function(data) {
-  //      this.setState({data: data});   // Magic here
-  //    }.bind(this),
+  componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});   // Magic here
+      }.bind(this),
 
-  //    error: function(xhr, status, err) {
-  //      console.error(this.props.url, status, err.toString());
-  //    }.bind(this)
-  //  });
-  //},
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
 
   render: function() {
-    var rows = this.props.data.map(function(row){
+    var rows = this.state.data.map(function(row){
       return <Row key={key++} english={row.english} spanish={row.spanish} />;
     });
 
@@ -65,14 +65,7 @@ var Table = React.createClass({
   }
 });
 
-var data = [
-  { english: 'One', spanish: 'Uno' },
-  { english: 'Two', spanish: 'Dos' },
-  { english: 'Three', spanish: 'Tres' }
-];
-
 ReactDOM.render(
-  <Table data={data} />,
-  //<Table url="http://localhost:9000/table_data" />,
+  <Table url="http://localhost:9000/table_data" />,
   document.getElementById('example')
 );
