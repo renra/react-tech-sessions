@@ -1,20 +1,20 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var HelloWorld = React.createClass({
+var Timer = React.createClass({
   render: function() {
     return (
-      <p>
+      <div>
         Hello, <input type="text" placeholder="Your name here" />!
         It is {this.props.date.toTimeString()}
-      </p>
+      </div>
     );
   }
 });
 
 setInterval(function() {
   ReactDOM.render(
-    <HelloWorld date={new Date()} />,
+    <Timer date={new Date()} />,
     document.getElementById('example')
   );
 }, 500);
