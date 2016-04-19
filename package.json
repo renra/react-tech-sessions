@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build_components": "browserify -t [ babelify --presets [ react ] ] src/components.js -o dist/bundle.js",
-    "build_timer": "browserify -t [ babelify --presets [ react ] ] src/timer.js -o dist/bundle.js"
+    "build_timer": "browserify -t [ babelify --presets [ react ] ] src/timer.js -o dist/bundle.js",
+    "build_table": "browserify -t [ babelify --presets [ react ] ] src/table.js -o dist/bundle.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "react": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "react-dom": "^0.14.8",
+    "jquery": "2.2.3"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
