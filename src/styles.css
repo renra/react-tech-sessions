@@ -1,0 +1,9 @@
+table.dictionary {
+  table-layout: fixed;
+  width: 280px;
+}
+
+input.dictionary-entry {
+  width: 130px;
+}
+
