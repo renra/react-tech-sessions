@@ -3,8 +3,7 @@ var http = require('http'),
   bodyParser = require('body-parser')
   nextId = 1;
 
-
-var dictionary = []
+var dictionary = [];
 
 function addToDictionary(entry){
   dictionary.push({id: nextId++, english: entry.english, spanish: entry.spanish});
